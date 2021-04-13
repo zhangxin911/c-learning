@@ -1,0 +1,12 @@
+[
+{
+  "directory": "/Users/zhangxin/Desktop/C++/build",
+  "command": "/usr/bin/clang++    -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -o CMakeFiles/tools.dir/main.cpp.o -c /Users/zhangxin/Desktop/C++/main.cpp",
+  "file": "/Users/zhangxin/Desktop/C++/main.cpp"
+},
+{
+  "directory": "/Users/zhangxin/Desktop/C++/build/math",
+  "command": "/usr/bin/clang++    -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -o CMakeFiles/MathFunctions.dir/MathFunctions.cc.o -c /Users/zhangxin/Desktop/C++/math/MathFunctions.cc",
+  "file": "/Users/zhangxin/Desktop/C++/math/MathFunctions.cc"
+}
+]

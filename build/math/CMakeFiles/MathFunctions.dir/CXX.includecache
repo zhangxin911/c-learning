@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/zhangxin/Desktop/C++/math/MathFunctions.cc
+stdio.h
+-
+stdlib.h
+-
+MathFunctions.h
+/Users/zhangxin/Desktop/C++/math/MathFunctions.h
+
+/Users/zhangxin/Desktop/C++/math/MathFunctions.h
+stdio.h
+-
+stdlib.h
+-
+

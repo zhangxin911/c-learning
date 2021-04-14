@@ -4,9 +4,15 @@
 #include "Config.h"
 #include <iostream>
 
-
-void test(){
+void test()
+{
     std::cout << "test" << std::endl;
+}
+
+int func(void)
+{
+    static int counter = 1;
+    return ++counter;
 }
 /**
  * power - Calculate the power of number.
@@ -19,6 +25,7 @@ int main(int argc, char *argv[])
 {
     std::cout << 2 << std::endl;
     test();
+
     if (argc < 3)
     {
         printf("Usage: %s base exponent \n", argv[0]);
@@ -28,6 +35,10 @@ int main(int argc, char *argv[])
     int exponent = atoi(argv[2]);
     double result = power(base, exponent);
     printf("%g ^ %d is %g\n", base, exponent, result);
+
+    int answer;
+    answer = func() - func() * func();
+    printf("%d\n", answer);
 
     return 0;
 }

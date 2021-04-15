@@ -14,6 +14,15 @@ int func(void)
     static int counter = 1;
     return ++counter;
 }
+
+template <typename T>
+void Swap(T &a, T &b)
+{
+    T temp;
+    temp = a;
+    a = b;
+    b = temp;
+}
 /**
  * power - Calculate the power of number.
  * @param base: Base value.

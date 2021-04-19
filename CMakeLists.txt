@@ -5,7 +5,7 @@ project(tools VERSION 0.1.0)
 include(CTest)
 enable_testing()
 
-add_subdirectory(math)
+add_subdirectory(math Worker)
 add_executable(tools main.cpp Config.h)
 target_link_libraries(tools MathFunctions)
 

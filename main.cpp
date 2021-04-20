@@ -56,15 +56,53 @@ int main(int argc, char *argv[])
 
     for (int x = 1; x <= 100; x++)
     {
-        int result = x;
         for (int y = 1; y <= x; y++)
         {
-            if (x % y == 0 && y % 1 == 0 && x != y && y != 1)
+            if (x % y == 0 && y % 1 == 0)
             {
-                result = x;
+                if (y != x && y != 1)
+                    break;
+                else if (x == 1 || y > 1)
+                    std::cout << x << std::endl;
             }
         }
-        std::cout << result << std::endl;
     }
+
+    double side_a, side_b, side_c;
+    std::cin >> side_a;
+    std::cin >> side_b;
+    std::cin >> side_c;
+
+    if (side_a == side_b && side_b == side_c)
+    {
+        std::cout << "等边三角形" << std::endl;
+    }
+    else if (side_a == side_b || side_a == side_c || side_b == side_c)
+    {
+        std::cout << "等腰三角形" << std::endl;
+    }
+    else
+    {
+        std::cout << "不等边三角形" << std::endl;
+    }
+    // double side_enter;
+    // int side_count = 3;
+
+    // for(int side_c = 1; side_c <3;side_c ++) {
+
+    // }
+    // while (side_count > 0 )
+    // {
+    //     std::cout << "side_enter: " << side_enter << std::endl;
+    //     side_count --;
+    // }
+
+    // while (std::cin >> side_a && std::cin >> side_b && std::cin >> side_c)
+    // {
+    //     // if (side_a == side_b && side_b == side_c)
+    //     // {
+    //     // } else if()
+    // }
+
     return 0;
 }

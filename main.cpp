@@ -68,23 +68,38 @@ int main(int argc, char *argv[])
         }
     }
 
+    int year = 1900;
+    int leap_year = 0;
+    if ((year % 4 == 0 && year % 100 != 0) || (year % 100 == 0 && year % 400 == 0))
+    {
+        leap_year = 1;
+    }
+    std::cout << leap_year << std::endl;
+
     double side_a, side_b, side_c;
     std::cin >> side_a;
     std::cin >> side_b;
     std::cin >> side_c;
 
-    if (side_a == side_b && side_b == side_c)
+    if (side_a != 0 && side_b != 0 && side_c != 0)
     {
-        std::cout << "等边三角形" << std::endl;
+        if (side_a + side_b > side_c || side_a + side_c > side_b || side_b + side_c > side_a)
+        {
+            if (side_a == side_b && side_b == side_c)
+            {
+                std::cout << "等边三角形" << std::endl;
+            }
+            else if (side_a == side_b || side_a == side_c || side_b == side_c)
+            {
+                std::cout << "等腰三角形" << std::endl;
+            }
+            else
+            {
+                std::cout << "不等边三角形" << std::endl;
+            }
+        }
     }
-    else if (side_a == side_b || side_a == side_c || side_b == side_c)
-    {
-        std::cout << "等腰三角形" << std::endl;
-    }
-    else
-    {
-        std::cout << "不等边三角形" << std::endl;
-    }
+
     // double side_enter;
     // int side_count = 3;
 

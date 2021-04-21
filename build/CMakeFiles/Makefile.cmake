@@ -56,7 +56,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "CPackConfig.cmake"
   "CPackSourceConfig.cmake"
   "CMakeFiles/CMakeDirectoryInformation.cmake"
-  "math/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "Worker/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
@@ -90,5 +90,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/ExperimentalMemCheck.dir/DependInfo.cmake"
   "CMakeFiles/Continuous.dir/DependInfo.cmake"
   "CMakeFiles/Experimental.dir/DependInfo.cmake"
-  "math/CMakeFiles/MathFunctions.dir/DependInfo.cmake"
+  "Worker/CMakeFiles/MathFunctions.dir/DependInfo.cmake"
   )

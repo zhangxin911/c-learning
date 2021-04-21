@@ -550,7 +550,7 @@ MathFunctions: cmake_check_build_system
 
 # fast build rule for target.
 MathFunctions/fast:
-	$(MAKE) $(MAKESILENT) -f math/CMakeFiles/MathFunctions.dir/build.make math/CMakeFiles/MathFunctions.dir/build
+	$(MAKE) $(MAKESILENT) -f Worker/CMakeFiles/MathFunctions.dir/build.make Worker/CMakeFiles/MathFunctions.dir/build
 .PHONY : MathFunctions/fast
 
 main.o: main.cpp.o

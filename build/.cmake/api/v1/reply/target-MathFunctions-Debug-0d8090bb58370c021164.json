@@ -3,7 +3,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "math/libMathFunctions.a"
+			"path" : "Worker/libMathFunctions.a"
 		}
 	],
 	"backtrace" : 1,
@@ -46,12 +46,12 @@
 			]
 		}
 	],
-	"id" : "MathFunctions::@874b28b4c7a3e614380d",
+	"id" : "MathFunctions::@4b977006ad2dc842a651",
 	"name" : "MathFunctions",
 	"nameOnDisk" : "libMathFunctions.a",
 	"paths" : 
 	{
-		"build" : "math",
+		"build" : "Worker",
 		"source" : "math"
 	},
 	"sourceGroups" : 

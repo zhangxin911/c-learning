@@ -74,12 +74,12 @@ CMAKE_BINARY_DIR = /Users/zhangxin/Desktop/C++/build
 
 # The main recursive "all" target.
 all: CMakeFiles/tools.dir/all
-all: math/all
+all: Worker/all
 
 .PHONY : all
 
 # The main recursive "preinstall" target.
-preinstall: math/preinstall
+preinstall: Worker/preinstall
 
 .PHONY : preinstall
 
@@ -113,33 +113,33 @@ clean: CMakeFiles/NightlyStart.dir/clean
 clean: CMakeFiles/ExperimentalMemCheck.dir/clean
 clean: CMakeFiles/Continuous.dir/clean
 clean: CMakeFiles/Experimental.dir/clean
-clean: math/clean
+clean: Worker/clean
 
 .PHONY : clean
 
 #=============================================================================
-# Directory level rules for directory math
+# Directory level rules for directory Worker
 
 # Recursive "all" directory target.
-math/all: math/CMakeFiles/MathFunctions.dir/all
+Worker/all: Worker/CMakeFiles/MathFunctions.dir/all
 
-.PHONY : math/all
+.PHONY : Worker/all
 
 # Recursive "preinstall" directory target.
-math/preinstall:
+Worker/preinstall:
 
-.PHONY : math/preinstall
+.PHONY : Worker/preinstall
 
 # Recursive "clean" directory target.
-math/clean: math/CMakeFiles/MathFunctions.dir/clean
+Worker/clean: Worker/CMakeFiles/MathFunctions.dir/clean
 
-.PHONY : math/clean
+.PHONY : Worker/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/tools.dir
 
 # All Build rule for target.
-CMakeFiles/tools.dir/all: math/CMakeFiles/MathFunctions.dir/all
+CMakeFiles/tools.dir/all: Worker/CMakeFiles/MathFunctions.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tools.dir/build.make CMakeFiles/tools.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tools.dir/build.make CMakeFiles/tools.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/zhangxin/Desktop/C++/build/CMakeFiles --progress-num=3,4 "Built target tools"
@@ -919,31 +919,31 @@ CMakeFiles/Experimental.dir/clean:
 .PHONY : CMakeFiles/Experimental.dir/clean
 
 #=============================================================================
-# Target rules for target math/CMakeFiles/MathFunctions.dir
+# Target rules for target Worker/CMakeFiles/MathFunctions.dir
 
 # All Build rule for target.
-math/CMakeFiles/MathFunctions.dir/all:
-	$(MAKE) $(MAKESILENT) -f math/CMakeFiles/MathFunctions.dir/build.make math/CMakeFiles/MathFunctions.dir/depend
-	$(MAKE) $(MAKESILENT) -f math/CMakeFiles/MathFunctions.dir/build.make math/CMakeFiles/MathFunctions.dir/build
+Worker/CMakeFiles/MathFunctions.dir/all:
+	$(MAKE) $(MAKESILENT) -f Worker/CMakeFiles/MathFunctions.dir/build.make Worker/CMakeFiles/MathFunctions.dir/depend
+	$(MAKE) $(MAKESILENT) -f Worker/CMakeFiles/MathFunctions.dir/build.make Worker/CMakeFiles/MathFunctions.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/zhangxin/Desktop/C++/build/CMakeFiles --progress-num=1,2 "Built target MathFunctions"
-.PHONY : math/CMakeFiles/MathFunctions.dir/all
+.PHONY : Worker/CMakeFiles/MathFunctions.dir/all
 
 # Build rule for subdir invocation for target.
-math/CMakeFiles/MathFunctions.dir/rule: cmake_check_build_system
+Worker/CMakeFiles/MathFunctions.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/zhangxin/Desktop/C++/build/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 math/CMakeFiles/MathFunctions.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Worker/CMakeFiles/MathFunctions.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/zhangxin/Desktop/C++/build/CMakeFiles 0
-.PHONY : math/CMakeFiles/MathFunctions.dir/rule
+.PHONY : Worker/CMakeFiles/MathFunctions.dir/rule
 
 # Convenience name for target.
-MathFunctions: math/CMakeFiles/MathFunctions.dir/rule
+MathFunctions: Worker/CMakeFiles/MathFunctions.dir/rule
 
 .PHONY : MathFunctions
 
 # clean rule for target.
-math/CMakeFiles/MathFunctions.dir/clean:
-	$(MAKE) $(MAKESILENT) -f math/CMakeFiles/MathFunctions.dir/build.make math/CMakeFiles/MathFunctions.dir/clean
-.PHONY : math/CMakeFiles/MathFunctions.dir/clean
+Worker/CMakeFiles/MathFunctions.dir/clean:
+	$(MAKE) $(MAKESILENT) -f Worker/CMakeFiles/MathFunctions.dir/build.make Worker/CMakeFiles/MathFunctions.dir/clean
+.PHONY : Worker/CMakeFiles/MathFunctions.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

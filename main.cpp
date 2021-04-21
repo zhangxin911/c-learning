@@ -26,6 +26,23 @@ void Swap(T &a, T &b)
     a = b;
     b = temp;
 }
+
+void copy_n(char dst[], char src[], int n);
+void copy_n(char dst[], char src[], int n)
+{
+    int size_src = sizeof(src) / sizeof(char);
+    if (size_src < n)
+    {
+        for(int i=0;i<n-size_src;i++){
+            dst[i] = NULL;
+        }
+    }else{
+        for(int i=0;i<n-size_src;i++){
+            dst[i] = src[i];
+        }
+    }
+}
+
 /**
  * power - Calculate the power of number.
  * @param base: Base value.
@@ -99,6 +116,9 @@ int main(int argc, char *argv[])
             }
         }
     }
+
+    char a[] = {1, 2, 3, 4};
+    std::cout << sizeof(a) / sizeof(char) << std::endl;
 
     // double side_enter;
     // int side_count = 3;

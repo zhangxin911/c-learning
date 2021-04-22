@@ -6,6 +6,7 @@
 #include <string>
 #include <memory>
 #include "Worker/Worker0.h"
+#define FORMAT "%s! C is cool!\n"
 
 void test()
 {
@@ -33,11 +34,15 @@ void copy_n(char dst[], char src[], int n)
     int size_src = sizeof(src) / sizeof(char);
     if (size_src < n)
     {
-        for(int i=0;i<n-size_src;i++){
+        for (int i = 0; i < n - size_src; i++)
+        {
             dst[i] = NULL;
         }
-    }else{
-        for(int i=0;i<n-size_src;i++){
+    }
+    else
+    {
+        for (int i = 0; i < n - size_src; i++)
+        {
             dst[i] = src[i];
         }
     }
@@ -138,6 +143,11 @@ int main(int argc, char *argv[])
     //     // {
     //     // } else if()
     // }
-
+    int num = 10;
+    printf(FORMAT, FORMAT);
+    printf("%d\n", ++num);
+    printf("%d\n", num++);
+    printf("%d\n", num--);
+    printf("%d\n", num);
     return 0;
 }

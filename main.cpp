@@ -149,5 +149,10 @@ int main(int argc, char *argv[])
     printf("%d\n", num++);
     printf("%d\n", num--);
     printf("%d\n", num);
+
+    double larger_a = 4.0, larger_b = 5.0;
+    larger_a = larger_of(larger_a, larger_b);
+    larger_b = larger_of(larger_a, larger_b);
+    std::cout << larger_a << larger_b << std::endl;
     return 0;
 }

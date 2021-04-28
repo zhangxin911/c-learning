@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/MathFunctions.dir/MathFunctions.cc.o"
+  "CMakeFiles/MathFunctions.dir/hotel.cc.o"
   "libMathFunctions.a"
   "libMathFunctions.pdb"
 )

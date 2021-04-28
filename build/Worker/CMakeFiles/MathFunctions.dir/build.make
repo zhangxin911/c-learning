@@ -90,17 +90,32 @@ Worker/CMakeFiles/MathFunctions.dir/MathFunctions.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MathFunctions.dir/MathFunctions.cc.s"
 	cd /Users/zhangxin/Desktop/C++/build/Worker && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/zhangxin/Desktop/C++/math/MathFunctions.cc -o CMakeFiles/MathFunctions.dir/MathFunctions.cc.s
 
+Worker/CMakeFiles/MathFunctions.dir/hotel.cc.o: Worker/CMakeFiles/MathFunctions.dir/flags.make
+Worker/CMakeFiles/MathFunctions.dir/hotel.cc.o: ../math/hotel.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangxin/Desktop/C++/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object Worker/CMakeFiles/MathFunctions.dir/hotel.cc.o"
+	cd /Users/zhangxin/Desktop/C++/build/Worker && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MathFunctions.dir/hotel.cc.o -c /Users/zhangxin/Desktop/C++/math/hotel.cc
+
+Worker/CMakeFiles/MathFunctions.dir/hotel.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MathFunctions.dir/hotel.cc.i"
+	cd /Users/zhangxin/Desktop/C++/build/Worker && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/zhangxin/Desktop/C++/math/hotel.cc > CMakeFiles/MathFunctions.dir/hotel.cc.i
+
+Worker/CMakeFiles/MathFunctions.dir/hotel.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MathFunctions.dir/hotel.cc.s"
+	cd /Users/zhangxin/Desktop/C++/build/Worker && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/zhangxin/Desktop/C++/math/hotel.cc -o CMakeFiles/MathFunctions.dir/hotel.cc.s
+
 # Object files for target MathFunctions
 MathFunctions_OBJECTS = \
-"CMakeFiles/MathFunctions.dir/MathFunctions.cc.o"
+"CMakeFiles/MathFunctions.dir/MathFunctions.cc.o" \
+"CMakeFiles/MathFunctions.dir/hotel.cc.o"
 
 # External object files for target MathFunctions
 MathFunctions_EXTERNAL_OBJECTS =
 
 Worker/libMathFunctions.a: Worker/CMakeFiles/MathFunctions.dir/MathFunctions.cc.o
+Worker/libMathFunctions.a: Worker/CMakeFiles/MathFunctions.dir/hotel.cc.o
 Worker/libMathFunctions.a: Worker/CMakeFiles/MathFunctions.dir/build.make
 Worker/libMathFunctions.a: Worker/CMakeFiles/MathFunctions.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/zhangxin/Desktop/C++/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libMathFunctions.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/zhangxin/Desktop/C++/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library libMathFunctions.a"
 	cd /Users/zhangxin/Desktop/C++/build/Worker && $(CMAKE_COMMAND) -P CMakeFiles/MathFunctions.dir/cmake_clean_target.cmake
 	cd /Users/zhangxin/Desktop/C++/build/Worker && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/MathFunctions.dir/link.txt --verbose=$(VERBOSE)
 

@@ -205,6 +205,33 @@ MathFunctions.cc.s:
 	cd /Users/zhangxin/Desktop/C++/build && $(MAKE) $(MAKESILENT) -f Worker/CMakeFiles/MathFunctions.dir/build.make Worker/CMakeFiles/MathFunctions.dir/MathFunctions.cc.s
 .PHONY : MathFunctions.cc.s
 
+hotel.o: hotel.cc.o
+
+.PHONY : hotel.o
+
+# target to build an object file
+hotel.cc.o:
+	cd /Users/zhangxin/Desktop/C++/build && $(MAKE) $(MAKESILENT) -f Worker/CMakeFiles/MathFunctions.dir/build.make Worker/CMakeFiles/MathFunctions.dir/hotel.cc.o
+.PHONY : hotel.cc.o
+
+hotel.i: hotel.cc.i
+
+.PHONY : hotel.i
+
+# target to preprocess a source file
+hotel.cc.i:
+	cd /Users/zhangxin/Desktop/C++/build && $(MAKE) $(MAKESILENT) -f Worker/CMakeFiles/MathFunctions.dir/build.make Worker/CMakeFiles/MathFunctions.dir/hotel.cc.i
+.PHONY : hotel.cc.i
+
+hotel.s: hotel.cc.s
+
+.PHONY : hotel.s
+
+# target to generate assembly for a file
+hotel.cc.s:
+	cd /Users/zhangxin/Desktop/C++/build && $(MAKE) $(MAKESILENT) -f Worker/CMakeFiles/MathFunctions.dir/build.make Worker/CMakeFiles/MathFunctions.dir/hotel.cc.s
+.PHONY : hotel.cc.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -220,6 +247,9 @@ help:
 	@echo "... MathFunctions.o"
 	@echo "... MathFunctions.i"
 	@echo "... MathFunctions.s"
+	@echo "... hotel.o"
+	@echo "... hotel.i"
+	@echo "... hotel.s"
 .PHONY : help
 
 

@@ -7,6 +7,8 @@
 #include <memory>
 #include "Worker/Worker0.h"
 #define FORMAT "%s! C is cool!\n"
+#include <vector>
+#include <array>
 
 void test()
 {
@@ -154,5 +156,11 @@ int main(int argc, char *argv[])
     larger_a = larger_of(larger_a, larger_b);
     larger_b = larger_of(larger_a, larger_b);
     std::cout << larger_a << larger_b << std::endl;
+
+    std::vector<int> v1(5);
+    for(int i =0;i<10;i++){
+        v1.push_back(i);
+    }
+    std::array<double,3> ad = {1.1,2.2,3.3};
     return 0;
 }

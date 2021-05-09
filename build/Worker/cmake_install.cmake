@@ -1,4 +1,4 @@
-# Install script for directory: /Users/zhangxin/Desktop/C++/math
+# Install script for directory: /Users/zhangxin/Desktop/C++/Worker
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

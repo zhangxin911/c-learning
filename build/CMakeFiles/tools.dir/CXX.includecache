@@ -6,33 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/Users/zhangxin/Desktop/C++/Config.h
-
-/Users/zhangxin/Desktop/C++/Worker/Worker0.h
-string
--
-
 /Users/zhangxin/Desktop/C++/main.cpp
-stdio.h
--
-stdlib.h
--
-math/MathFunctions.h
-/Users/zhangxin/Desktop/C++/math/MathFunctions.h
-Config.h
-/Users/zhangxin/Desktop/C++/Config.h
 iostream
--
-string
--
-memory
--
-Worker/Worker0.h
-/Users/zhangxin/Desktop/C++/Worker/Worker0.h
-
-/Users/zhangxin/Desktop/C++/math/MathFunctions.h
-stdio.h
--
-stdlib.h
 -
 

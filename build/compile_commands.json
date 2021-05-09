@@ -6,7 +6,17 @@
 },
 {
   "directory": "/Users/zhangxin/Desktop/C++/build/Worker",
-  "command": "/usr/bin/clang++    -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -o CMakeFiles/MathFunctions.dir/MathFunctions.cc.o -c /Users/zhangxin/Desktop/C++/math/MathFunctions.cc",
-  "file": "/Users/zhangxin/Desktop/C++/math/MathFunctions.cc"
+  "command": "/usr/bin/clang++    -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -o CMakeFiles/Worker0.dir/BankAccount.cc.o -c /Users/zhangxin/Desktop/C++/Worker/BankAccount.cc",
+  "file": "/Users/zhangxin/Desktop/C++/Worker/BankAccount.cc"
+},
+{
+  "directory": "/Users/zhangxin/Desktop/C++/build/Worker",
+  "command": "/usr/bin/clang++    -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -o CMakeFiles/Worker0.dir/Worker0.cc.o -c /Users/zhangxin/Desktop/C++/Worker/Worker0.cc",
+  "file": "/Users/zhangxin/Desktop/C++/Worker/Worker0.cc"
+},
+{
+  "directory": "/Users/zhangxin/Desktop/C++/build/Worker",
+  "command": "/usr/bin/clang++    -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -o CMakeFiles/Worker0.dir/tabtenn0.cc.o -c /Users/zhangxin/Desktop/C++/Worker/tabtenn0.cc",
+  "file": "/Users/zhangxin/Desktop/C++/Worker/tabtenn0.cc"
 }
 ]

@@ -1,2 +1,0 @@
-/usr/bin/ar qc libWorker0.a  CMakeFiles/Worker0.dir/BankAccount.cc.o CMakeFiles/Worker0.dir/Worker0.cc.o CMakeFiles/Worker0.dir/tabtenn0.cc.o
-/usr/bin/ranlib libWorker0.a

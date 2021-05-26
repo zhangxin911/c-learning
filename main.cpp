@@ -1,66 +1,50 @@
 #include <iostream>
-#include <thread>
-#include <memory>
 
-using namespace std;
-mutex m;
-void thread1()
+int main(int, char **)
 {
-    for (int i = 0; i < 20; i++)
+
+    char ch1[] = "John, please!";
+    printf("%s\n", ch1);
+    printf("%d\n", strlen(ch1));
+    char *start = ch1;
+    char *end = ch1 + strlen(ch1) - 1;
+
+    printf("%c\n", *start);
+    printf("%c\n", *end);
+
+    printf("%p\n", start);
+    printf("%p\n", end);
+
+    while (start < end)
     {
-        cout << "thread1..." << endl;
+        char tmp = *start;
+        printf("%c\n", tmp);
+        *start = *end;
+        *end = tmp;
+        start++;
+        end--;
     }
-}
 
-void thread2()
-{
-    for (int i = 0; i < 20; i++)
+    printf("%s\n", ch1);
+
+    char ch2[] = "aabbaa";
+    char *start2 = ch2;
+    char *end2 = ch2 + strlen(ch2) - 1;
+    bool isAABB = true;
+    while (start2 < end2)
     {
-        cout << "thread2..." << endl;
-    }
-}
-
-class Report{
-    private:
-    std::string str;
-    public:
-    Report(const std::string s) :str(s){
-        std::cout << "Object created!\n";
-    }
-    ~Report() {
-        std::cout << "object deleted!\n";
-    }
-    void comment() const {
-        std::cout << str << "\n";
-    }
-};
-
-int main(int argc, char *argv[])
-{
-    thread th1(thread1);
-    thread th2(thread2);
-    th1.join();
-    th2.join();
-    cout << "main..." << endl;
-
-    int n = thread::hardware_concurrency();//获取cpu核心个数  
-    cout << n << endl;  
-
-    {
-        std::auto_ptr<Report> ps (new Report("using auto_ptr"));
-        ps->comment();
+        if (*start2 != *end2)
+        {
+            isAABB = false;
+        }
+        start2++;
+        end2--;
     }
 
-    {
-        std::shared_ptr<Report> ps (new Report("using shared_ptr"));
-        ps->comment();
-    }
+    printf("%d\n", isAABB);
 
-    {
-        std::unique_ptr<Report> ps (new Report("using unique_ptr"));
-        ps->comment();
-    }
+    char ch3[] = "www.itcastcn$.this is *strtok test!";
 
-
-    return 0;
+    printf("%s\n", strtok(ch3, "$"));
+    printf("%s\n", strtok(NULL, "$"));
 }

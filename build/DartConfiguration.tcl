@@ -4,8 +4,8 @@
 
 
 # Configuration directories and files
-SourceDirectory: /Users/zhangxin/Desktop/C++
-BuildDirectory: /Users/zhangxin/Desktop/C++/build
+SourceDirectory: /Users/zhangxin/Desktop/my_github/c-learning
+BuildDirectory: /Users/zhangxin/Desktop/my_github/c-learning/build
 
 # Where to place the cost data store
 CostDataFile: 
@@ -26,7 +26,7 @@ SubmitURL: http://
 NightlyStartTime: 00:00:00 EDT
 
 # Commands for the build/test/submit cycle
-ConfigureCommand: "/usr/local/Cellar/cmake/3.17.2/bin/cmake" "/Users/zhangxin/Desktop/C++"
+ConfigureCommand: "/usr/local/Cellar/cmake/3.17.2/bin/cmake" "/Users/zhangxin/Desktop/my_github/c-learning"
 MakeCommand: /usr/local/Cellar/cmake/3.17.2/bin/cmake --build . --config "${CTEST_CONFIGURATION_TYPE}" -- -i
 DefaultCTestConfigurationType: Release
 

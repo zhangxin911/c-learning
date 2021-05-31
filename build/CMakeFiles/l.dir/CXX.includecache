@@ -6,13 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/Users/zhangxin/Desktop/C++/main.cpp
+/Users/zhangxin/Desktop/my_github/c-learning/main.cpp
 iostream
--
-math.h
--
-time.h
--
-stdlib.h
 -
 

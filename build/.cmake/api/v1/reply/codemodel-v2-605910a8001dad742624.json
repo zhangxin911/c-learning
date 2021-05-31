@@ -54,7 +54,7 @@
 					[
 						0
 					],
-					"name" : "heima",
+					"name" : "tour",
 					"targetIndexes" : 
 					[
 						0,
@@ -289,9 +289,9 @@
 				},
 				{
 					"directoryIndex" : 0,
-					"id" : "heima::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-heima-Debug-bde848bdd0ae01f5b68d.json",
-					"name" : "heima",
+					"id" : "tour::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-tour-Debug-fe33169177e0283b96f5.json",
+					"name" : "tour",
 					"projectIndex" : 0
 				}
 			]
@@ -300,8 +300,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/Users/zhangxin/Desktop/my_github/c-learning/build",
-		"source" : "/Users/zhangxin/Desktop/my_github/c-learning"
+		"build" : "/Users/zhangxin/Desktop/C++/build",
+		"source" : "/Users/zhangxin/Desktop/C++"
 	},
 	"version" : 
 	{

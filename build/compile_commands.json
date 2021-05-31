@@ -1,7 +1,7 @@
 [
 {
-  "directory": "/Users/zhangxin/Desktop/my_github/c-learning/build",
-  "command": "/usr/bin/clang++    -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -o CMakeFiles/heima.dir/main.cpp.o -c /Users/zhangxin/Desktop/my_github/c-learning/main.cpp",
-  "file": "/Users/zhangxin/Desktop/my_github/c-learning/main.cpp"
+  "directory": "/Users/zhangxin/Desktop/C++/build",
+  "command": "/usr/bin/clang++    -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -o CMakeFiles/tour.dir/main.cpp.o -c /Users/zhangxin/Desktop/C++/main.cpp",
+  "file": "/Users/zhangxin/Desktop/C++/main.cpp"
 }
 ]

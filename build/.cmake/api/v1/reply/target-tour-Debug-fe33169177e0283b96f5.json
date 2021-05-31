@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "heima"
+			"path" : "tour"
 		}
 	],
 	"backtrace" : 1,
@@ -45,7 +45,7 @@
 			]
 		}
 	],
-	"id" : "heima::@6890427a1f51a3e7e1df",
+	"id" : "tour::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -61,8 +61,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "heima",
-	"nameOnDisk" : "heima",
+	"name" : "tour",
+	"nameOnDisk" : "tour",
 	"paths" : 
 	{
 		"build" : ".",

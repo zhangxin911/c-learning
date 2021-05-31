@@ -68,10 +68,10 @@ RM = /usr/local/Cellar/cmake/3.17.2/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/zhangxin/Desktop/my_github/c-learning
+CMAKE_SOURCE_DIR = /Users/zhangxin/Desktop/C++
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/zhangxin/Desktop/my_github/c-learning/build
+CMAKE_BINARY_DIR = /Users/zhangxin/Desktop/C++/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -90,7 +90,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target package_source
 package_source:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
-	/usr/local/Cellar/cmake/3.17.2/bin/cpack --config ./CPackSourceConfig.cmake /Users/zhangxin/Desktop/my_github/c-learning/build/CPackSourceConfig.cmake
+	/usr/local/Cellar/cmake/3.17.2/bin/cpack --config ./CPackSourceConfig.cmake /Users/zhangxin/Desktop/C++/build/CPackSourceConfig.cmake
 .PHONY : package_source
 
 # Special rule for the target package_source
@@ -133,9 +133,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/zhangxin/Desktop/my_github/c-learning/build/CMakeFiles /Users/zhangxin/Desktop/my_github/c-learning/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/zhangxin/Desktop/C++/build/CMakeFiles /Users/zhangxin/Desktop/C++/build/CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/zhangxin/Desktop/my_github/c-learning/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/zhangxin/Desktop/C++/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -164,6 +164,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named tour
+
+# Build rule for target.
+tour: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tour
+.PHONY : tour
+
+# fast build rule for target.
+tour/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tour.dir/build.make CMakeFiles/tour.dir/build
+.PHONY : tour/fast
+
+#=============================================================================
 # Target rules for targets named ContinuousCoverage
 
 # Build rule for target.
@@ -188,19 +201,6 @@ ContinuousTest: cmake_check_build_system
 ContinuousTest/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ContinuousTest.dir/build.make CMakeFiles/ContinuousTest.dir/build
 .PHONY : ContinuousTest/fast
-
-#=============================================================================
-# Target rules for targets named heima
-
-# Build rule for target.
-heima: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 heima
-.PHONY : heima
-
-# fast build rule for target.
-heima/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/heima.dir/build.make CMakeFiles/heima.dir/build
-.PHONY : heima/fast
 
 #=============================================================================
 # Target rules for targets named ContinuousBuild
@@ -546,7 +546,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/heima.dir/build.make CMakeFiles/heima.dir/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tour.dir/build.make CMakeFiles/tour.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -555,7 +555,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/heima.dir/build.make CMakeFiles/heima.dir/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tour.dir/build.make CMakeFiles/tour.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -564,7 +564,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/heima.dir/build.make CMakeFiles/heima.dir/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tour.dir/build.make CMakeFiles/tour.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 # Help Target
@@ -606,7 +606,7 @@ help:
 	@echo "... NightlySubmit"
 	@echo "... NightlyTest"
 	@echo "... NightlyUpdate"
-	@echo "... heima"
+	@echo "... tour"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

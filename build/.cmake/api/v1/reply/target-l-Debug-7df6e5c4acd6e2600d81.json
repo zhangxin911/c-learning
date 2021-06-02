@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "tour"
+			"path" : "l"
 		}
 	],
 	"backtrace" : 1,
@@ -41,11 +41,12 @@
 			"language" : "CXX",
 			"sourceIndexes" : 
 			[
-				0
+				0,
+				1
 			]
 		}
 	],
-	"id" : "tour::@6890427a1f51a3e7e1df",
+	"id" : "l::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -61,8 +62,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "tour",
-	"nameOnDisk" : "tour",
+	"name" : "l",
+	"nameOnDisk" : "l",
 	"paths" : 
 	{
 		"build" : ".",
@@ -74,7 +75,8 @@
 			"name" : "Source Files",
 			"sourceIndexes" : 
 			[
-				0
+				0,
+				1
 			]
 		}
 	],
@@ -84,6 +86,12 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "main.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "test.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

@@ -83,7 +83,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/Users/zhangxin/Desktop/C++/build"
+			"value" : "/Users/zhangxin/Desktop/my_github/c-learning/build"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -575,7 +575,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/Users/zhangxin/Desktop/C++"
+			"value" : "/Users/zhangxin/Desktop/my_github/c-learning"
 		},
 		{
 			"name" : "CMAKE_INSTALL_NAME_TOOL",
@@ -859,7 +859,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "tour"
+			"value" : "l"
 		},
 		{
 			"name" : "CMAKE_PROJECT_VERSION",
@@ -1794,7 +1794,7 @@
 			"value" : "/usr/bin/svn"
 		},
 		{
-			"name" : "tour_BINARY_DIR",
+			"name" : "l_BINARY_DIR",
 			"properties" : 
 			[
 				{
@@ -1803,10 +1803,10 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/zhangxin/Desktop/C++/build"
+			"value" : "/Users/zhangxin/Desktop/my_github/c-learning/build"
 		},
 		{
-			"name" : "tour_SOURCE_DIR",
+			"name" : "l_SOURCE_DIR",
 			"properties" : 
 			[
 				{
@@ -1815,7 +1815,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/zhangxin/Desktop/C++"
+			"value" : "/Users/zhangxin/Desktop/my_github/c-learning"
 		}
 	],
 	"kind" : "cache",

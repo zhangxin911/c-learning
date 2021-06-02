@@ -54,7 +54,7 @@
 					[
 						0
 					],
-					"name" : "tour",
+					"name" : "l",
 					"targetIndexes" : 
 					[
 						0,
@@ -289,9 +289,9 @@
 				},
 				{
 					"directoryIndex" : 0,
-					"id" : "tour::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-tour-Debug-fe33169177e0283b96f5.json",
-					"name" : "tour",
+					"id" : "l::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-l-Debug-7df6e5c4acd6e2600d81.json",
+					"name" : "l",
 					"projectIndex" : 0
 				}
 			]
@@ -300,8 +300,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/Users/zhangxin/Desktop/C++/build",
-		"source" : "/Users/zhangxin/Desktop/C++"
+		"build" : "/Users/zhangxin/Desktop/my_github/c-learning/build",
+		"source" : "/Users/zhangxin/Desktop/my_github/c-learning"
 	},
 	"version" : 
 	{

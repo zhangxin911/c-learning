@@ -1,65 +1,44 @@
 #include <iostream>
-#include <math.h>
-#include <time.h>
-#include <stdlib.h>
+#include "test.h"
+
+typedef struct student
+{
+    int age;
+    char name[10];
+    int num;
+} stu_t;
 
 int main(int, char **)
 {
-    printf("%d%c%d=%d\n", 5, '+', 5, 10);
-    FILE *fp = fopen("1.qqq", "rw");
+
+    stu_t stu[4] = {
+        {10, 'stu_a', 1},
+        {21, 'stu_b', 2},
+        {32, 'stu_c', 3},
+        {43, 'stu_d', 4}};
+
+    FILE *fp = fopen("fwrite&fread.log", "wb");
     if (fp == NULL)
     {
         perror("fopen error");
         return -1;
     }
-    // char str[1024] = {0};
-    // str = fgetc(fp);
-    // char *str;
-    // *str = fgetc(fp);
-    // printf("%s\n", str);
-    fprintf(fp, "%d%c%d=%d\n", 5, '+', 5, 10);
-
-    char str[1024];
-    char *m1 = "m_string";
-    char m[1024];
-    scanf("%s", &str);
-    printf("scanf result is: %s\n", str);
-    sscanf(m1, "scanf result is: %s\n", &m);
-    printf("sscanf is %s\n", m);
-    char fstr[1024];
-    int fscanf_a;
-    int fscanf_b;
-    char fscanf_ch;
-    int fscanf_c;
-    fscanf(fp, "%d%c%d=%d\n", &fscanf_a, &fscanf_ch, &fscanf_b, &fscanf_c);
-    printf("fscanf is %d%c%d=%d\n", fscanf_a, fscanf_ch, fscanf_b, fscanf_c);
+    fwrite(&stu[1], sizeof(stu_t), 1, fp);
     fclose(fp);
 
-    FILE *fp1 = fopen("2.txt", "r");
-    char fp1_buffer[1024];
-    while (1)
-    {
-        int num;
-        // fscanf(fp1, "%d\n", &num);
-        memset(fp1_buffer, 0, 1024);
-        fgets(fp1_buffer, 1024, fp1);
-        printf("%s", fp1_buffer);
-        // printf("num is %d\n", num);
-        if (feof(fp1))
-        {
-            break;
-        }
-    }
-    fclose(fp1);
-    srand(time(NULL));
+    FILE *fp_read = fopen("fwrite&fread.log", "rb");
+    stu_t s1;
 
-    FILE *random_fp = fopen("random.log", "w");
+    int ret = fread(&s1, sizeof(stu_t), 1, fp_read);
+    printf("ret: %d\n", ret);
 
-    for (int i = 0; i < 10; i++)
-    {
+    printf("age:%d\n", s1.age);
+    printf("name:%s\n", s1.name);
+    printf("num:%d\n", s1.num);
+    fclose(fp_read);
 
-        printf("random num is : %d\n", rand() % 100);
-        fprintf(random_fp, "%d\n", rand() % 100);
-    }
-    return 0;
+    Test my_test1;
+    char *test = "my_test2";
+    Test my_test2(test);
+    Test my_test3 = "my_test3";
 }

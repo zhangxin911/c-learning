@@ -41,4 +41,43 @@ int main(int, char **)
     char *test = "my_test2";
     Test my_test2(test);
     Test my_test3 = "my_test3";
+
+    FILE *fp_cal = fopen("calc.txt", "wr");
+    fputs("10+4=\n", fp_cal);
+    char cal_buf[1024] = {0};
+    fputs("1*2=\n", fp_cal);
+    fclose(fp_cal);
+    FILE *fp_cal_r = fopen("calc.txt", "r");
+    fgets(cal_buf, 4096, fp_cal_r);
+    int cal_a, cal_b;
+    char cal_add;
+    char cal_equal;
+    printf("%s\n", cal_buf);
+    sscanf(cal_buf, "%d%c%d=\n", &cal_a, &cal_add, &cal_b);
+    printf("%d%c%d\n", cal_a, cal_add, cal_b);
+    // fgets("%d%c%d%c\n",fp_cal);
+    fclose(fp_cal_r);
+
+    FILE *fp_read1 = fopen("./test.h", "r");
+    FILE *fp_copy = fopen("copy_test.txt", "w");
+    char copy_buf[128] = {0};
+    int ret1 = 0;
+    if (fp_read1 == NULL)
+    {
+        perror("fp_read1 fail");
+    }
+    while (1)
+    {
+        memset(copy_buf, 0, sizeof(copy_buf));
+        ret1 = fread(copy_buf, 1, sizeof(copy_buf), fp_read1);
+        printf("%d\n", ret1);
+        if (ret1 == 0)
+        {
+            break;
+        }
+        printf("%d\n", ret1);
+        // fwrite(copy_buf, 1, ret, fp_copy);
+    }
+    fclose(fp_read1);
+    fclose(fp_copy);
 }

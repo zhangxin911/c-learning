@@ -12,21 +12,6 @@ typedef struct linkListNode
     linkListNode *next;
 } lld;
 
-void test(int (*p)(int a), int a)
-{
-    (*p)(a);
-    std::cout << a << std::endl;
-}
-
-typedef int(FUNCTION)(int a);
-typedef int (*FUNCTION_P)(int b);
-
-int inc(int a)
-{
-    std::cout << "my_func" << std::endl;
-    return a;
-}
-
 void showStr(char *str)
 {
     while (*str != '\0')
@@ -48,17 +33,31 @@ int fb_arr(int pos)
     }
 }
 
+void test_function(int a)
+{
+    std::cout << a << std::endl;
+}
+
+void wrap_function(void (*p)(int a), double b)
+{
+    (*p)(b);
+    std::cout << b << std::endl;
+}
+
+typedef void(FUNCTION)(int a);
+typedef void (*FUNCTION_P)(int a);
 int main(int, char **)
 {
-    FUNCTION *function1 = &inc;
-    FUNCTION_P function2 = &inc;
-    int (*FUNCTION_POINTER)(int c) = &inc;
-    function1(2);
-    function2(3);
-    FUNCTION_POINTER(5);
-    test(&inc, 1);
-    test(function2, 4);
-    test(FUNCTION_POINTER, 5);
+    FUNCTION *function = &test_function;
+    function(2);
+    FUNCTION_P function_p = &test_function;
+    function_p(3);
+    void (*function_p_p)(int a) = test_function;
+    function_p_p(44);
+    wrap_function(function, 10);
+    wrap_function(function_p, 11);
+    wrap_function(function_p_p, 12);
+
     char *function_str = "function_str";
     showStr(function_str);
 

@@ -17,6 +17,8 @@ sys/types.h
 -
 unistd.h
 -
+sys/wait.h
+-
 
 /Users/zhangxin/Desktop/my_github/c-learning/test.h
 

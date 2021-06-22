@@ -21,6 +21,8 @@ sys/wait.h
 -
 sys/uio.h
 -
+string.h
+-
 
 /Users/zhangxin/Desktop/my_github/c-learning/test.h
 

@@ -9,20 +9,10 @@
 /Users/zhangxin/Desktop/my_github/c-learning/main.cpp
 iostream
 -
-test.h
-/Users/zhangxin/Desktop/my_github/c-learning/test.h
-string
--
 sys/types.h
 -
 unistd.h
 -
-sys/wait.h
--
-sys/uio.h
--
 string.h
 -
-
-/Users/zhangxin/Desktop/my_github/c-learning/test.h
 

@@ -15,4 +15,10 @@ unistd.h
 -
 string.h
 -
+vector
+-
+stdlib.h
+-
+time.h
+-
 

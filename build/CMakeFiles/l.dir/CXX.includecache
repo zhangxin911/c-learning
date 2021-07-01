@@ -11,14 +11,8 @@ iostream
 -
 sys/types.h
 -
+sys/wait.h
+-
 unistd.h
--
-string.h
--
-vector
--
-stdlib.h
--
-time.h
 -
 

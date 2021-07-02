@@ -19,4 +19,8 @@ fcntl.h
 -
 string.h
 -
+sys/stat.h
+-
+sys/mman.h
+-
 

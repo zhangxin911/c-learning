@@ -1,147 +1,367 @@
 #include <iostream>
-#include "test.h"
-#include <string>
 #include <sys/types.h>
-#include <unistd.h>
 #include <sys/wait.h>
+#include <unistd.h>
+#include <fcntl.h>
+#include <string.h>
+#include <sys/stat.h>
+#include <sys/mman.h>
 
-// typedef struct linkListNode
+using namespace std;
+template <class T>
+void showT1(T a)
+{
+    cout << a << endl;
+}
+template <class T>
+void showT2(T a, T b)
+{
+    cout << a << endl;
+}
+
+template <class T>
+class template_class_1
+{
+public:
+    template_class_1(T a)
+    {
+        this->value = a;
+    }
+    void showValue()
+    {
+        cout << this->value << endl;
+    }
+    T value;
+};
+
+void template_class_1_func(template_class_1<int> &a)
+{
+    a.showValue();
+}
+
+// class Person
 // {
-//     int value;
-//     struct linkListNode *next;
-// } lld;
+//     friend ostream &operator<<(ostream &cout, Person &p);
 
-typedef struct linkListNode
-{
-    int value;
-    linkListNode *next;
-} lld;
+// private:
+//     int a;
+//     int b;
 
-void showStr(char *str)
+// public:
+//     Person(int a, int b)
+//     {
+//         this->a = a;
+//         this->b = b;
+//     }
+// };
+
+// ostream &operator<<(ostream &cout, Person &p)
+// {
+//     cout << "p's value: " << p.a << "and" << p.b << endl;
+//     return cout;
+// }
+class MyInterge
 {
-    while (*str != '\0')
+
+    friend ostream &operator<<(ostream &cout, MyInterge &p);
+
+public:
+    MyInterge()
     {
-        std::cout << *str << std::endl;
-        str++;
-    }
-}
+        this->num = 0;
+    };
 
-int fb_arr(int pos)
-{
-    if (pos == 1 || pos == 2)
+    MyInterge &operator++()
     {
-        return 1;
-    }
-    else
+        ++this->num;
+        return *this;
+    };
+
+    MyInterge operator++(int a)
     {
-        return fb_arr(pos - 1) + fb_arr(pos - 2);
-    }
-}
+        MyInterge temp = *this;
+        this->num++;
+        return temp;
+    };
 
-void test_function(int a)
-{
-    std::cout << a << std::endl;
-}
-
-void wrap_function(void (*p)(int a), double b)
-{
-    (*p)(b);
-    std::cout << b << std::endl;
-}
-
-struct linkNode
-{
-    int value;
-    linkNode *next;
+private:
+    int num = 0;
 };
 
-struct linkList
+ostream &operator<<(ostream &cout, MyInterge &p)
 {
-    linkNode arr[10];
-};
+    // cout << p.num << endl;
+    return cout;
+}
 
-typedef void(FUNCTION)(int a);
-typedef void (*FUNCTION_P)(int a);
-int main(int argc, char *argv[])
+class Person
 {
-    // for (size_t index = 0; index < argc; index++)
-    // {
-    //     printf("%s\n", argv[index]);
-    // }
-
-    FUNCTION *function = &test_function;
-    function(2);
-    FUNCTION_P function_p = &test_function;
-    function_p(3);
-    void (*function_p_p)(int a) = test_function;
-    function_p_p(44);
-    wrap_function(function, 10);
-    wrap_function(function_p, 11);
-    wrap_function(function_p_p, 12);
-
-    char *function_str = "function_str";
-    showStr(function_str);
-
-    std::cout << fb_arr(5) << std::endl;
-    // lld d4 = {44, NULL};
-    // lld d3 = {3, &d4};
-    // lld d2 = {2, &d3};
-    // lld d1 = {1, &d2};
-    // linkListNode link_arr[4] = {
-    //     d1,
-    //     d2,
-    //     d3,
-    //     d4};
-    // for (int i = 0; i < sizeof(link_arr) / sizeof(linkListNode); i++)
-    // {
-    //     printf("%d\n", link_arr[i].value);
-    // }
-
-    lld *d4 = (lld *)malloc(sizeof(lld));
-    d4->value = 42;
-    d4->next = NULL;
-
-    lld *d3 = (lld *)malloc(sizeof(lld));
-    d3->value = 32;
-    d3->next = d4;
-
-    lld *d2 = (lld *)malloc(sizeof(lld));
-    d2->value = 22;
-    d2->next = d3;
-
-    lld *d1 = (lld *)malloc(sizeof(lld));
-    d1->value = 12;
-    d1->next = d2;
-
-    lld *p = d1;
-    while (p != NULL)
+public:
+    Person(int age)
     {
-        printf("%d\n", p->value);
-        p = p->next;
+        this->age = age;
+    }
+    ~Person()
+    {
+        cout << "~Person" << endl;
+    }
+    void showAge()
+    {
+        cout << "age: " << this->age << endl;
     }
 
-    // printf("before fork: [%d]\n", getpid());
+private:
+    int age;
+};
+
+class SmartPointer
+{
+private:
+    Person *s_person;
+
+public:
+    SmartPointer(Person *person)
+    {
+        this->s_person = person;
+    }
+    ~SmartPointer()
+    {
+        if (this->s_person)
+        {
+            delete s_person;
+            this->s_person = NULL;
+        }
+    }
+    Person *operator->()
+    {
+        return this->s_person;
+    }
+    Person &operator*()
+    {
+        return *this->s_person;
+    }
+};
+
+class test1
+{
+public:
+    void operator()(int age)
+    {
+        this->age = age;
+        cout << this->age << endl;
+    }
+
+private:
+    int age = 10;
+};
+
+class test2
+{
+public:
+    test2() : m_age(30)
+    {
+    }
+
+private:
+    int m_age = 101;
+};
+
+class p1
+{
+public:
+    // p1(){
+
+    // }
+    p1(int gold)
+    {
+        this->commonGold = commonGold;
+    }
+    void showGold()
+    {
+        cout << "p1 showGold" << endl;
+        cout << this->commonGold << endl;
+    };
+    int commonGold = -1;
+    int a = -2;
+    static int b;
+    static void showB()
+    {
+        cout << "p1 static showB" << endl;
+    }
+
+private:
+    int gold = 1;
+};
+
+int p1::b = -11;
+
+class p2 : public p1
+{
+public:
+    p2(int gold) : p1(gold)
+    {
+        cout << "p2 constructor" << endl;
+    }
+    void showGold()
+    {
+        cout << "p2 showGold" << endl;
+        cout << this->commonGold << endl;
+    }
+    int a = -22;
+    static int b;
+    static void showB()
+    {
+        cout << "p2 static showB" << endl;
+    }
+};
+
+class p22 : private p1
+{
+public:
+    void showCommonGold()
+    {
+        cout << this->commonGold << endl;
+        // cout << this->gold << endl;
+    }
+
+private:
+    void showPrivateGold()
+    {
+        // cout << this->gold << endl;
+    }
+};
+
+int p2::b = -12;
+
+class animal
+{
+public:
+    virtual void speak()
+    {
+        cout << this->name << endl;
+    }
+
+private:
+    string name = "cat";
+};
+
+class cat : public animal
+{
+public:
+    void speak()
+    {
+        cout << "cat say" << endl;
+    }
+};
+
+class dog : public animal
+{
+public:
+    void speak()
+    {
+        cout << "dog say" << endl;
+    }
+};
+
+void animalSpeak(animal &a)
+{
+    a.speak();
+}
+
+typedef void(FUNC)(int a, int b);
+typedef void (*FUNC1)(int a, int b);
+void test(int a, int b)
+{
+    cout << "test" << endl;
+}
+int main()
+{
+    showT1("t1");
+    showT2(100, 200);
+    template_class_1<int> tc1(2);
+    template_class_1_func(tc1);
+    tc1.showValue();
+    // Person p1(10, 20);
+    // cout << p1 << endl
+    //      << p1 << endl;
+    animal a1;
+    a1.speak();
+    cat c1;
+    dog d1;
+    animalSpeak(c1);
+    animalSpeak(d1);
+
+    p1 c_p1(33);
+    p2 c_p2(44);
+    p22 c_p22();
+    c_p1.showGold();
+    c_p2.showGold();
+    cout << c_p2.a << endl;
+    cout << p2::b << endl;
+    p1::showB();
+    p2::showB();
+    p2::p1::showB();
+    test1 t1;
+    t1(50);
+    test2 t2;
+
+    SmartPointer sp(new Person(20));
+    sp->showAge();
+
+    FUNC *p = test;
+    p(1, 2);
+    FUNC1 p1 = test;
+    p1(1, 1);
+    MyInterge myInt;
+    cout << myInt << endl;
+    ++myInt;
+    cout << ++myInt << endl;
+    myInt++;
+    // cout << myInt++ << endl;
+    cout << myInt << endl;
+    // cout << myInt++ << endl;
     // pid_t pid = fork();
     // if (pid < 0)
     // {
-    //     perror("fork fail");
-    //     return -1;
+    //     perror("forl fail");
     // }
     // else if (pid > 0)
     // {
-    //     printf("father: pid:[%d]\n", getpid());
-    //     // sleep(5);
+    //     cout << "father fork id: " << getpid() << endl;
+
+    //     // pid_t wpid = waitpid(pid, &status, 0);
+    //     while (1)
+    //     {
+    //         int status;
+    //         pid_t wpid = waitpid(pid, &status, WNOHANG);
+    //         if (WIFEXITED(status))
+    //         {
+    //             cout << "quit normaily" << endl;
+    //             cout << "quit id: " << wpid << endl;
+    //             break;
+    //         }
+    //         else if (WIFSIGNALED(status))
+    //         {
+    //             cout << "quit by signal" << endl;
+    //         }
+    //     }
+
+    //     // sleep(2);
     // }
-    // else if (pid == 0)
+    // else
     // {
-    //     printf("child: pid:[%d]\n", getpid());
+    //     cout << "child fork id: " << getpid() << endl;
+    //     cout << "father fork id: " << getppid() << endl;
     // }
 
-    // printf("after fork: [%d]\n", getpid());
-
-    // printf("before fork:[%d]\n", getpid());
-
-    // for (size_t i = 0; i < 3; i++)
+    // int fd[2];
+    // int fd_result = pipe(fd);
+    // if (fd_result < 0)
+    // {
+    //     perror("fd_result fail");
+    //     return -1;
+    // }
+    // else
     // {
     //     pid_t pid = fork();
     //     if (pid < 0)
@@ -150,39 +370,181 @@ int main(int argc, char *argv[])
     //     }
     //     else if (pid > 0)
     //     {
-    //         printf("father pid:[%d], fpid:[%d]\n", getpid(), getppid());
+    //         close(fd[0]);
+    //         cout << getpid() << endl;
+    //         write(fd[1], "hello world", strlen("hello world"));
+    //         // sleep(2);
+    //         wait(NULL);
     //     }
-    //     else if (pid == 0)
+    //     else
     //     {
-    //         printf("child pid:[%d], fpid:[%d]\n", getpid(), getppid());
-    //         break;
+    //         close(fd[1]);
+    //         char buf[40];
+    //         memset(buf, 0, sizeof(buf));
+    //         read(fd[0], buf, sizeof(buf));
+    //         printf("buf: %s\n", buf);
+    //         cout << getpid() << endl;
+    //         cout << getppid() << endl;
+    //     }
+    // }
+    // int fd[2];
+    // int pipe_result = pipe(fd);
+    // if (pipe_result < 0)
+    // {
+    //     perror("pipe error!");
+    //     return -1;
+    // }
+    // else
+    // {
+    //     pid_t pid = fork();
+    //     if (pid < 0)
+    //     {
+    //         perror("fork error!");
+    //     }
+    //     else if (pid > 0)
+    //     {
+    //         close(fd[0]);
+    //         dup2(fd[1],STDOUT_FILENO);
+    //         execlp("ps","ps","aux",NULL);
+    //         wait(NULL);
+    //     }
+    //     else
+    //     {
+    //         close(fd[1]);
+    //         dup2(fd[0],STDIN_FILENO);
+    //         execlp("grep","grep","bash",NULL);
     //     }
     // }
 
-    printf("before fork: [%d]\n", getpid());
-    pid_t pid = fork();
-    int fork_val = 100;
-    if (pid < 0)
-    {
-        perror("fork fail\n");
-    }
-    else if (pid > 0)
-    {
-        printf("father fork: [%d]\n", getpid());
-        fork_val++;
-        printf("fork_val:%d\n", fork_val);
-        int status;
-        pid_t wpid = wait(&status);
-        printf("wpid: [%d]", wpid);
-        printf("staus: [%d]", status);
-    }
-    else
-    {
-        // execl("/bin/ls", "ls", "-al", NULL);
-        // perror("execel error!");
-        printf("child fork: [%d]\n", getpid());
-        printf("fork_val:%d\n", fork_val);
-        sleep(2);
-    }
+    // pid_t pid;
+    // for (int i = 0; i < 2; i++)
+    // {
+    //     pid = fork();
+    //     if (i == 0)
+    //     {
+    //         int file_exists = access("./test_fifo", F_OK);
+    //         if (file_exists != 0)
+    //         {
+    //             int ret = mkfifo("./test_fifo", 0777);
+    //             if (ret < 0)
+    //             {
+    //                 perror("mkfifo error!");
+    //                 return -1;
+    //             }
+    //         }
+    //         else
+    //         {
+    //             int fd = open("./test_fifo", O_RDWR);
+    //             if (fd < 0)
+    //             {
+    //                 perror("open error!");
+    //                 return -1;
+    //             }
+    //             write(fd, "Hello World2!;", strlen("Hello World2!;"));
+    //         }
+
+    //         // close(fd);
+    //     }
+    //     else if (i == 1)
+    //     {
+    //         int file_exists = access("./test_fifo", F_OK);
+    //         if (file_exists != 0)
+    //         {
+    //             int ret = mkfifo("./test_fifo", 0777);
+    //             if (ret < 0)
+    //             {
+    //                 perror("mkfifo error!");
+    //                 return -1;
+    //             }
+    //         }
+    //         else
+    //         {
+    //             int fd = open("./test_fifo", O_RDWR);
+    //             if (fd < 0)
+    //             {
+    //                 perror("open error!");
+    //                 return -1;
+    //             }
+    //             char buf[64];
+    //             memset(buf, 0, sizeof(buf));
+    //             read(fd, buf, sizeof(buf));
+    //             cout << "buf: " << buf << endl;
+    //             close(fd);
+    //         }
+    //     }
+    // }
+
+    // pid_t pid = fork();
+    // if (pid < 0)
+    // {
+    //     perror("fork error!");
+    // }
+    // else if (pid > 0)
+    // {
+    //     int exsist = access("./test1_fifo", F_OK);
+    //     if (exsist != 0)
+    //     {
+    //         int ret = mkfifo("./test1_fifo", 0777);
+    //         if (ret < 0)
+    //         {
+    //             perror("mkfifo error!");
+    //             return -1;
+    //         }
+    //         else
+    //         {
+    //             int fd = open("./test1_fifo", O_RDWR);
+    //             write(fd, "test1_fifo", strlen("test1_fifo"));
+    //         }
+    //     }
+    //     cout << pid << endl;
+    // }
+    // else
+    // {
+    //     int fd = open("./test1_fifo", O_RDWR);
+    //     if (fd < 0)
+    //     {
+    //         perror("open error!");
+    //         return -1;
+    //     }
+    //     char buf[64];
+    //     memset(buf, 0, sizeof(buf));
+    //     read(fd, buf, sizeof(buf));
+    //     cout << getpid() << endl;
+    //     cout << "father and child fifo: " << buf << endl;
+    // }
+
+    // int fd = open("./test_mmap.log", O_RDWR);
+    // if (fd < 0)
+    // {
+    //     cout << "open failed" << endl;
+    //     return -1;
+    // }
+    // else
+    // {
+    //     int len = lseek(fd, 0, SEEK_END);
+    //     void *addr = mmap(NULL, len, PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0);
+    //     if (addr == MAP_FAILED)
+    //     {
+    //         perror("mmap failed");
+    //     }
+    //     pid_t pid = fork();
+    //     cout << pid << endl;
+    //     if (pid < 0)
+    //     {
+    //         perror("fork error!");
+    //         return -1;
+    //     }
+    //     else if (pid > 0)
+    //     {
+    //         memcpy(addr, "hellow mmap", strlen("hellow mmap"));
+    //         wait(NULL);
+    //     }
+    //     else
+    //     {
+    //         char *p = (char *)addr;
+    //         cout << "child value: " << p << endl;
+    //     }
+    // }
+
     return 1;
 }

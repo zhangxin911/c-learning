@@ -7,20 +7,22 @@
 #IncludeRegexTransform: 
 
 /Users/zhangxin/Desktop/my_github/c-learning/main.cpp
-iostream
--
-sys/types.h
--
-sys/wait.h
+stdio.h
 -
 unistd.h
 -
-fcntl.h
+stdlib.h
+-
+signal.h
+-
+sys/types.h
+-
+sys/time.h
+-
+iostream
 -
 string.h
 -
-sys/stat.h
--
-sys/mman.h
+vector
 -
 

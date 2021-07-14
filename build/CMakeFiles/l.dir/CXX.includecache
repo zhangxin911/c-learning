@@ -25,4 +25,16 @@ string.h
 -
 vector
 -
+deque
+-
+stack
+-
+queue
+-
+list
+-
+set
+-
+algorithm
+-
 

@@ -17,24 +17,10 @@ signal.h
 -
 sys/types.h
 -
-sys/time.h
+sys/socket.h
+-
+netinet/in.h
 -
 iostream
--
-string.h
--
-vector
--
-deque
--
-stack
--
-queue
--
-list
--
-set
--
-algorithm
 -
 

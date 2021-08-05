@@ -23,4 +23,8 @@ netinet/in.h
 -
 iostream
 -
+string
+-
+cmath
+-
 
